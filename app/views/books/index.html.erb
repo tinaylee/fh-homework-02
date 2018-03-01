@@ -2,6 +2,21 @@
 
 <h1>Books</h1>
 
+<%= link_to 'Home', root_path %>
+<br>
+<br>
+
+<%= form_tag(books_path, method: "get") do %>
+  <%= label_tag(:books, "Search for:") %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Books" %>
+  <%= submit_tag("Search") %>
+
+<% end %>
+
+<% if @books.blank? %>
+  <h4>There are no books containing the term <%= params[:search] %>.</h4>
+<% end %>
+
 <table>
   <thead>
     <tr>
