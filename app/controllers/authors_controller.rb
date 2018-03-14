@@ -21,6 +21,11 @@ class AuthorsController < ApplicationController
   def edit
   end
 
+ # def full_name
+  #  puts "#{self.first_name} #{self.last_name}" 
+ # end
+
+
   # POST /authors
   # POST /authors.json
   def create

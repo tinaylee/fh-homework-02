@@ -3,6 +3,7 @@
 <h1>Books</h1>
 
 <%= link_to 'Home', root_path %>
+<%= link_to 'Authors', authors_path %>
 <br>
 <br>
 
@@ -22,6 +23,7 @@
     <tr>
       <th>Title</th>
       <th>Author</th>
+      <th>Subtitle</th>
       <th>Genre</th>
       <th>Classification</th>
       <th>Category</th>
@@ -34,7 +36,8 @@
     <% @books.each do |book| %>
       <tr>
         <td><%= book.title %></td>
-        <td><%= book.author %></td>
+        <td><%= book.authors.ids%></td>
+        <td><%= book.subtitle %></td>
         <td><%= book.genre %></td>
         <td><%= book.classification %></td>
         <td><%= book.category %></td>

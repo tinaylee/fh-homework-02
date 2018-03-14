@@ -7,7 +7,9 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @book.author %>
+  <% @book.authors.ids.each do |id|%>
+    <%= Author.find(id).full_name %>
+  <% end %>
 </p>
 
 <p>
