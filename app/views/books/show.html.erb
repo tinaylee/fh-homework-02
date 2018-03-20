@@ -6,9 +6,9 @@
 </p>
 
 <p>
-  <strong>Author:</strong>
-  <% @book.authors.ids.each do |id|%>
-    <%= Author.find(id).full_name %>
+  <strong>Author(s):</strong>
+  <% @book.authors.each do | author |%>
+    <%= link_to author.full_name, author_path(author) %>
   <% end %>
 </p>
 

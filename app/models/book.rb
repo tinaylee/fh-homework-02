@@ -4,18 +4,20 @@ class Book < ApplicationRecord
 
 
   def self.search(search)
-    where("title ILIKE ? OR author ILIKE ? OR genre ILIKE ? OR classification ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    where("title ILIKE ? OR genre ILIKE ? OR classification ILIKE ? OR subtitle ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
   end
 
-  def get_author
- #  author = book.authors
-    book.authors.ids.each do |id|
-      puts Author.find(id).full_name
-    end
+ 
+  def info
+    # author_names = authors.map do | author |
+    #   author.full_name
+    # end
+    "#{title} : #{subtitle} by #{author_names}"
   end
 
-
-
+  def author_names
+    authors.map(&:full_name).join(', ')
+  end
 end
 
  

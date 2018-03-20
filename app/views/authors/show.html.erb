@@ -17,9 +17,9 @@
 
 
 <p>
-  <strong>Books:</strong>
-    <% @author.books.ids.each do |id|%>
-      <%= Book.find(id).title %>
+  <strong>Book(s):</strong>
+    <% @author.books.each do |book|%>
+      <%= link_to book.title, book_path(book) %>
     <% end %>
 </p>
 
